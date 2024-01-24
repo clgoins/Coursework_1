@@ -1,0 +1,7 @@
+If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?:
+I'd possibly call it Purple and Yellow. It seems like the danceability value is fairly high, while the energy and valence values are much more neutral.
+
+Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?:
+A raw average of the values provided could be skewed one way or another if the listener has, for example, a bad week, where maybe they were listening to music with
+a much lower danceabiliy & valence rating than what would otherwise be normal. I suppose one could analyze the data in order to find trends like this in order to discard
+statistical outliers. This could maybe result in a list that reflects a more "average" listening experience for the listener in question.

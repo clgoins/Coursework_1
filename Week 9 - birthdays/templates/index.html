@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Birthdays</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Birthdays</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Add a Birthday</h2>
+                <form name="birthdayForm" action="/" method="post">
+                    <input name="birthdayName" type="text" autocomplete="off" placeholder="Name"> </input>
+                    <input name="birthdayMonth" type="text" autocomplete="off" placeholder="Month"></input>
+                    <input name="birthdayDay" type="text" autocomplete="off" placeholder="Day"></input>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="section">
+
+                <h2>All Birthdays</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Birthday</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- render database here -->
+                        {% for item in birthdayList %}
+                            <tr>
+                                <td>{{ item['name'] }}</td>
+                                <td>{{ item['month'] }} / {{ item['day'] }}</td>
+                                <td>
+                                    <form name="removeButton" action="/remove/" method="post">
+                                        <input name="id" type="hidden" value={{ item['id'] }}></input>
+                                        <button type="submit">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

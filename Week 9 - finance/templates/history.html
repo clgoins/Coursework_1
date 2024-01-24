@@ -1,0 +1,38 @@
+{% extends "layout.html"%}
+
+
+{% block title %}
+Portfolio Summary
+{% endblock %}
+
+{% block main %}
+
+<div class="mb-3">
+    <h3>Past Transactions: </h3>
+    <table class="table">
+        <thead>
+            <th>Symbol:</th>
+            <th>Name:</th>
+            <th>Transaction Type:</th>
+            <th>Quantity:</th>
+            <th>Share Price:</th>
+            <th>Total Cost:</th>
+            <th>Transaction Time:</th>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <td class="{{ transaction['type'] }}"> {{ transaction["symbol"] }}</td>
+                    <td class="{{ transaction['type'] }}"> {{ transaction["name"] }} </td>
+                    <td class="{{ transaction['type'] }}"> {{ transaction["type"] }} </td>
+                    <td class="{{ transaction['type'] }}"> {{ transaction["quantity"] }} </td>
+                    <td class="{{ transaction['type'] }}"> {{ transaction["price"] }} </td>
+                    <td class="{{ transaction['type'] }}"> {{ transaction["value"] }} </td>
+                    <td>{{ transaction["time"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

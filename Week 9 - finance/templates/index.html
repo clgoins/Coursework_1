@@ -1,0 +1,56 @@
+{% extends "layout.html"%}
+
+
+{% block title %}
+Portfolio Summary
+{% endblock %}
+
+{% block main %}
+
+<div class="mb-3">
+    <table class="table">
+        <thead>
+            <th><h2>Hello, {{ username }}</h2></th>
+            <th><h2>Current Funds: {{ cash }}</h2></th>
+        </thead>
+    </table>
+</div>
+<br><br><br>
+<div class="mb-3">
+    <h3>Current Holdings: </h3>
+    <table class="table table-striped">
+        <thead>
+            <th>Symbol:</th>
+            <th>Name:</th>
+            <th>Shares Owned:</th>
+            <th>Current Price:</th>
+            <th>Total Value:</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            {% for stock in holdings %}
+                <tr>
+                    <td>{{ stock["symbol"] }}</td>
+                    <td>{{ stock["name"] }}</td>
+                    <td>{{ stock["shares"] }}</td>
+                    <td>{{ stock["price"] }}</td>
+                    <td>{{ stock["value"] }}</td>
+                    <td><button id="buy" form="transaction" formaction="/buy" formmethod="post">Buy</button></td>
+                    <td><button id="sell" form="transaction" formaction="/sell" formmethod="post">Sell</button></td>
+                    <td><input type="text" form="transaction" name="shares" placeholder="Shares:"></td>
+                    <input type="hidden" form="transaction" name="symbol" value="{{ stock['symbol'] }}">
+                    <form id="transaction"></form>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+<br>
+<div class="mb-3">
+<h3>Total Portfolio Value: {{ total }}</h3>
+</div>
+
+{% endblock %}

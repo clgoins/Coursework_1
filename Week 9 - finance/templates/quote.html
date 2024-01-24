@@ -1,0 +1,43 @@
+{% extends "layout.html"%}
+
+
+{% block title %}
+Get Quote
+{% endblock %}
+
+{% block main %}
+
+<div class="mb-3">
+    <form name="getQuote" action="/quote" method="post">
+        <input name="symbol" autofocus autocomplete="off" placeholder="Stock Symbol:" type="text">
+        <button type="submit">Get Quote</button>
+    </form>
+</div>
+
+<div class="mb-3 quote">
+    <table class="table table-striped">
+        <thead>
+            <th>Symbol: </th>
+            <th>Name: </th>
+            <th>Price: </th>
+            <th></th>
+        </thead>
+        <tbody>
+            {% for quote in quotes %}
+                <tr>
+                    <td>{{ quote['symbol'] }}</td>
+                    <td>{{ quote['name'] }}</td>
+                    <td>{{ quote['price'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="mb-3">
+    <form name="resetQuote" action="/resetQuote" method="post">
+        <button type="submit">Restart Quote</button>
+    </form>
+</div>
+
+{% endblock %}

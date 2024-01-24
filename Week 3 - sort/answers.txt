@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: sort1 was consistently the slowest of the three, except in the case that the list was already sorted, in which case it was the fastest. I recall the best case for bubble sort was O(n), so this tracks.
+
+sort2 uses: merge sort
+
+How do you know?: sort2 was consistently the fastest of the three, except when the list is already sorted, where bubble sort beats it by a small margin. With a worst case of O(nlogn) this makes sense, since the other two algorithms have a worst case of O(n^2)
+
+sort3 uses: selection sort
+
+How do you know?: sort3 executed in approximately the same amount of time regardless of the order of the lists, assuming the lists were of the same length. Selection sort has a time efficiency of O(n^2) at its best AND worst case scenarios, so it makes sense that Merge Sort would always beat it, and Bubble Sort would beat it if the values are already in order.

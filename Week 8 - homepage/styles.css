@@ -1,0 +1,89 @@
+.header
+{
+    text-align: center;
+    background-color: #283250;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #ffbf5e;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 15px;
+    height: 33%;
+}
+
+.textContent
+{
+    color: #79B59B;
+    font-size: 20px;
+    text-align: center;
+    height: 33%;
+}
+
+.embeddedVideos
+{
+    padding-bottom: 5px;
+}
+
+body
+{
+    background-color: #1A1D35;
+    color: #79B59B;
+    text-align: center;
+}
+
+h2
+{
+    text-align: center;
+    padding-top: 200px;
+    margin-left: 300px;
+    color: #79B59B;
+}
+
+.links
+{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #283250;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.images
+{
+    color: #FFFFFF;
+    width: 100%;
+    height: 33%;
+    font-size: 40px;
+    text-align: center;
+}
+
+.blackKeyGroup1
+{
+    position: relative;
+    top: -205px;
+    left: -65px;
+    margin: 0 40px 40px 0;
+    background-color: black;
+    height: 150px;
+    width: 40px;
+}
+
+.blackKeyGroup2
+{
+    position: relative;
+    top: -205px;
+    left: 20px;
+    margin: 0 40px 40px 0;
+    background-color: black;
+    height: 150px;
+    width: 40px;
+}
+
+.whitePianoKey
+{
+    background-color: white;
+    height: 200px;
+    width: 80px;
+
+}
